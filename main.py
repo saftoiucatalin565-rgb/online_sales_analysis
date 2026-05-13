@@ -1,8 +1,10 @@
 from product import Product
 from product_manager import ProductManager
+from cart import Cart
+import random
 
 def main():
-    print("=== SISTEM GESTIONARE PRODUSE ===\n")
+    print("=== SISTEM GESTIONARE PRODUSE SI COS ===\n")
     
     # Cream ProductManager
     manager = ProductManager()
@@ -26,6 +28,17 @@ def main():
     # Calculam valoarea totala
     total_value = manager.compute_total_inventory_value()
     print(f"=== Valoare totala inventar: {total_value} lei ===\n")
+    
+    # Cream cos si adaugam 3 produse aleatorii
+    cart = Cart()
+    selected_products = random.sample(manager.products, 3)
+    
+    print("\n=== Simulare Cumparaturi ===")
+    for product in selected_products:
+        cart.add_item(product, random.randint(1, 3))
+    
+    # Afisam cosul
+    cart.show_cart()
 
 if __name__ == "__main__":
     main()
