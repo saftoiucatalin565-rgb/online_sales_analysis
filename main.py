@@ -1,8 +1,10 @@
 from product import Product
 from product_manager import ProductManager
+from cart import Cart
+import random
 
 def main():
-    print("=== SISTEM GESTIONARE PRODUSE - VERSIUNE MAIN ===\n")
+    print("=== SISTEM GESTIONARE PRODUSE SI COS ===\n")
     
     # Cream ProductManager
     manager = ProductManager()
@@ -20,6 +22,14 @@ def main():
     print("\n=== Test Eliminare Produs ===")
     manager.remove_product("Mouse Logitech")
     manager.show_all_products()
+    
+    # Cream cos si adaugam produse
+    cart = Cart()
+    cart.add_item(product1, 2)
+    cart.add_item(product3, 1)
+    
+    # Afisam cosul
+    cart.show_cart()
 
 if __name__ == "__main__":
     main()
