@@ -1,5 +1,7 @@
 from product import Product
 
+from product import Product
+
 class ProductManager:
     def __init__(self):
         """Constructor pentru initializarea managerului de produse"""
@@ -24,3 +26,13 @@ class ProductManager:
         """Calculeaza valoarea totala a inventarului"""
         total = sum(product.price * product.quantity for product in self.products)
         return total
+    
+    def remove_product(self, product_name):
+        """Elimina un produs dupa nume"""
+        for product in self.products:
+            if product.name == product_name:
+                self.products.remove(product)
+                print(f"Produs eliminat: {product_name}")
+                return True
+        print(f"Produsul '{product_name}' nu a fost gasit!")
+        return False
