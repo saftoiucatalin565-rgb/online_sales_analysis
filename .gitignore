@@ -1,0 +1,23 @@
+# Config files
+config.json
+
+# Screenshots
+*.png
+*.jpg
+*.jpeg
+screenshots/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
